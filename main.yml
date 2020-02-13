@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: 127.0.0.1
   vars:
   - vault_addr: https://vault-vault.apps.52.232.124.18.xip.io:8200
   - ssh_mount_point: ssh
