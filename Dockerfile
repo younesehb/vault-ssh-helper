@@ -67,6 +67,7 @@ RUN cd /tmp && \
     ansible-playbook /tmp/vault-ssh-helper/main.yml
 
 COPY rootfs /
+RUN chmod +x -R / 
 RUN /postunpack.sh
 ENV BITNAMI_APP_NAME="postgresql" \
     BITNAMI_IMAGE_VERSION="11.7.0-debian-10-r0" \
