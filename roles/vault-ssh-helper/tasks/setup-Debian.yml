@@ -23,4 +23,4 @@
     - { regexp: '^UsePAM', line: 'UsePAM yes' }
     - { regexp: '^PasswordAuthentication', line: 'PasswordAuthentication no' }
   notify:
-    - Restart sshd
+    - restart sshd
