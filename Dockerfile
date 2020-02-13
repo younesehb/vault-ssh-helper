@@ -13,7 +13,8 @@ RUN install_packages ca-certificates curl git wget libbsd0 libc6 libedit2 libffi
 RUN . ./libcomponent.sh && component_unpack "postgresql" "11.7.0-0" --checksum c43fe844be161e37d008bc1996e439eba3ba7423839d133da8ae5afaa8a33837
 RUN apt-get update && apt-get upgrade && \
     rm -r /var/lib/apt/lists /var/cache/apt/archives
-RUN /build/install-gosu.sh
+RUN chmod +x /build/install-gosu.sh && \
+	/build/install-gosu.sh
 RUN update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX && \
     DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
 RUN echo 'en_GB.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
@@ -49,7 +50,7 @@ RUN echo "===> Installing python, sudo, and other supporting tools..."  && \
     echo "===> Adding hosts for convenience..."        && \
     mkdir -p /etc/ansible                              && \
     echo 'localhost' > /etc/ansible/hosts
-	
+
 RUN cd /tmp && \
     git clone https://github.com/younesehb/vault-ssh-helper.git && \
     ansible-galaxy install jonathandalves.vault_ssh_helper && \
