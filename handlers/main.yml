@@ -1,5 +1,5 @@
 ---
 # handlers file for vagrant-ssh-helper
 - name: restart sshd
-  command: systemctl restart sshd
+  command: service ssh restart 
 
