@@ -196,6 +196,7 @@ RUN apt-get install git
 RUN cd /tmp && \
     git clone https://github.com/younesehb/vault-ssh-helper.git && \
     ansible-playbook /tmp/vault-ssh-helper/main.yml
+    
 ENV PATH $PATH:/usr/lib/postgresql/$PG_MAJOR/bin
 ENV PGDATA /var/lib/postgresql/data
 # this 777 will be replaced by 700 at runtime (allows semi-arbitrary "--user" values)
