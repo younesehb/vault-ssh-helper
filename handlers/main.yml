@@ -1,10 +1,4 @@
 ---
 # handlers file for vagrant-ssh-helper
-- name: Restart sshd
-  service:
-    name: sshd
-    state: restarted
-- name: Put SELinux in permissive mode
-  selinux:
-    policy: targeted
-    state: permissive
+- name: restart sshd
+  command: service ssh restart
