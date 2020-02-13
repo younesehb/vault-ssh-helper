@@ -4,4 +4,4 @@
   - vault_addr: https://vault-vault.apps.52.232.124.18.xip.io:8200
   - ssh_mount_point: ssh
   roles:
-  - roles/vault_ssh_helper
+  - vault-ssh-helper
