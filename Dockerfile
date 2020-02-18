@@ -27,7 +27,9 @@ RUN echo "===> Installing python, sudo, and other supporting tools..."  && \
         python python-yaml sudo            \
 		openssh-server \
 		openssh-client \
-        curl wget git gcc python-pip python-dev libffi-dev libssl-dev  && \
+		vim \
+		telnet \
+        curl  wget git gcc python-pip python-dev libffi-dev libssl-dev  && \
     apt-get -y --purge remove python-cffi          && \
     pip install --upgrade pycrypto cffi pywinrm    && \
     \
@@ -52,10 +54,6 @@ RUN echo "===> Installing python, sudo, and other supporting tools..."  && \
     echo "===> Adding hosts for convenience..."        && \
     mkdir -p /etc/ansible                              && \
     echo 'localhost' > /etc/ansible/hosts
-RUN ls /etc/pam.d/ && \
-    mkdir /var/run/sshd
-RUN echo 'root:12345678' | chpasswd
-RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 # SSH login fix. Otherwise user is kicked off after login
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
