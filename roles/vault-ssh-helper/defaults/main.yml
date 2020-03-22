@@ -4,3 +4,4 @@ vault_addr: https://vault-vault.apps.52.232.124.18.xip.io:8200
 ssh_mount_point: ssh
 tls_skip_verify: !!str true
 allowed_roles: "*"
+allowed_cidr_list: "0.0.0.0/0"
