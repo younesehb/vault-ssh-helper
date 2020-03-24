@@ -30,5 +30,6 @@ public class VaultDemoApplication  implements CommandLineRunner {
         logger.info("Username : " + credential.getUsername() );
         logger.info("Password : " + credential.getPassword() );
 
+        
     }
 }
