@@ -4,5 +4,6 @@
   - vault_addr: https://vault-vault.apps.52.232.124.18.xip.io
   - ssh_mount_point: ssh
   - allowed_cidr_list: "0.0.0.0/0"
+  - allowed_roles: "*"
   roles:
   - vault-ssh-helper
