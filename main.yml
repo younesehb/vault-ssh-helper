@@ -5,5 +5,6 @@
   - ssh_mount_point: ssh
   - allowed_cidr_list: "0.0.0.0/0"
   - allowed_roles: "*"
+  - tls_skip_verify: true
   roles:
   - vault-ssh-helper
